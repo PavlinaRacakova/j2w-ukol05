@@ -2,13 +2,13 @@ package cz.czechitas.java2webapps.ukol5.newRegistration;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 @Getter
 @Setter
@@ -35,4 +35,13 @@ public class RegistrationForm {
     private String email;
 
     private String phoneNumber;
+
+    public String getBirthdayInReadableForm() {
+       return birthday.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
+    }
+
+    public String getCampSessionInReadableForm() {
+        CampSessionDate campSessionDate = Enum.valueOf(CampSessionDate.class, campSession);
+        return campSessionDate.getCampSessionDateInReadableForm();
+    }
 }
