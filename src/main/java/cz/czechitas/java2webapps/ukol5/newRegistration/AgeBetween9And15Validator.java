@@ -9,6 +9,9 @@ import java.time.Period;
 public class AgeBetween9And15Validator implements ConstraintValidator<AgeBetween9And15, LocalDate> {
     @Override
     public boolean isValid(LocalDate birthday, ConstraintValidatorContext context) {
+        if(birthday == null) {
+            return false;
+        }
         Period period = birthday.until(LocalDate.now());
         int ageOfChild = period.getYears();
         return ageOfChild >= 9 && ageOfChild <= 15;
