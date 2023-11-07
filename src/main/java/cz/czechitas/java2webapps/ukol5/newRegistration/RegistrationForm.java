@@ -12,7 +12,9 @@ import java.time.format.FormatStyle;
 
 @Getter
 @Setter
-
+/*
+The model class that is ready to accept data and store them.
+ */
 public class RegistrationForm {
 
     @NotBlank

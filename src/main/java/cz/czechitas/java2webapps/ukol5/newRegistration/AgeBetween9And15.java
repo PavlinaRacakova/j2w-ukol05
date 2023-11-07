@@ -8,6 +8,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/*
+This annotation validates that the annotated LocalDate property is set between 9 and 15 years in the past from now.
+It should be used only with LocalDate object, otherwise it always returns false.
+ */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = AgeBetween9And15Validator.class)
