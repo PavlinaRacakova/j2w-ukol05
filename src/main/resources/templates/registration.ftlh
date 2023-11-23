@@ -32,6 +32,9 @@
             <label for="birthday">Birthday:</label>
             <input type=date id="birthday" name="birthday" value=[@spring.bind "form.birthday"/]>
             <div class="error">[@spring.showErrors "<br>"/]</div>
+            [#list springMacroRequestContext.getBindStatus("form").errorMessages as customValidationError]
+                <div class="error"><b>${customValidationError}</b></div>
+            [/#list]
         </div>
 
         <div class="mb-3">

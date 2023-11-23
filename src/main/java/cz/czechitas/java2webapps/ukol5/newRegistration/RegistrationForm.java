@@ -2,6 +2,7 @@ package cz.czechitas.java2webapps.ukol5.newRegistration;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -23,8 +24,8 @@ public class RegistrationForm {
     @NotBlank
     private String surname;
 
+    @NotNull
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @AgeBetween9And15
     private LocalDate birthday;
 
     @NotBlank
