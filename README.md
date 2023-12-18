@@ -1,3 +1,32 @@
+# Homework no. 5
+
+Create a webpage for registering for a summer camp for kids. The page will include a form that, upon submission, will undergo validation. If the form is filled out correctly, a page displaying a summary of the entered information will appear. If there are any errors in the form, the form will be displayed again with the user-entered data filled in, and error messages will be displayed for the erroneous fields.
+
+1. Fork the source repository into your GitHub account, or continue with the task from the previous lesson.
+2. Clone the repository from your GitHub account to your local computer.
+3. Run the cloned application and open the page http://localhost:8080/ in a browser. You'll see a page displaying "TODO."
+4. Create a Java Bean to store the form data for registration, naming it RegistraceForm. Store gender and selected session as String; use a code for the session, like session-1, session-2, etc.
+5. Create a controller method to receive data from the RegistraceForm form.
+6. Create an HTML form with the following details. The form's appearance isn't crucial, but if you want to create a functional form without writing styles, you can use the Bootstrap library. Participant's details (child's):
+   * Name (required field)
+   * Surname (required field)
+   * Date of birth (required field)
+   * Gender (boy/girl – required field)
+   * Session (e.g., July 5th to 11th, July 12th to 18th, July 19th to 25th – required field)
+   * Parent's email (optional field)
+   * Parent's phone (optional field)
+7. Configure validation of the form data in Java.
+8. In the controller method, check the conditions. If they're not met, ensure that an appropriate error message is displayed next to the respective field.
+   * Age between 9 and 15 years (inclusive). A reminder of the code for calculating age:
+```java
+Period period = birthDate.until(LocalDate.now());
+int age = period.getYears();
+```
+9. Create a page to display the registration summary. You can copy the page with the form and use spans instead of inputs or set the inputs' attribute to readonly.
+10. Check if everything is functioning correctly.
+11. Commit and push the changes (the resulting code) to your repository on GitHub.
+12. Insert the link to your repository as the solution to the task on the Moje Czechitas portal.
+
 # Úkol 5
 
 Vytvoř stránku pro registraci na letní dětský tábor. Stránka bude obsahovat formulář, po jeho odeslání se provede validace. Pokud bude formulář v pořádku,
